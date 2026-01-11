@@ -17,6 +17,12 @@ func TestHello(t *testing.T) {
 
 // t testing.TB - интерфейс для вспомогательных функций в тесте или бенчмарке
 func assertCorrectMessage(t testing.TB, got, want string) {
+
+	/*
+		Указание, что функция вспомогательная
+		При ошибке в коде ссылка строку будет не во вспомогательной функции, а в тесте
+	*/
+
 	t.Helper()
 	if got != want {
 		t.Errorf("Возвращает: %q Ожидается: %q", got, want)
