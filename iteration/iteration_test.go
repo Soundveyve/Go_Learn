@@ -20,3 +20,16 @@ func getMeFeedback(t testing.TB, got, want string) {
 		t.Errorf("got %q but want %q", got, want)
 	}
 }
+
+/*
+Бенчмарки используются для теста средней скорости выполнения функции
+Loop() возвращает true до тех пор, пока выполняется бенчмарк.
+go test -bench=. (или, если Windows Powershell, go test -bench=".")
+Измеряется время только выполнения тела цикла;
+код настройки и очистки автоматически исключается из измерения времени выполнения теста
+*/
+func BenchmarkRepeat(b *testing.B) {
+	for b.Loop() {
+		Repeat("a", 0)
+	}
+}
