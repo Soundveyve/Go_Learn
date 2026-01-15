@@ -1,6 +1,9 @@
 package iteration
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestRepeat(t *testing.T) {
 	t.Run("При передаче одного символа, он же и возвращается", func(t *testing.T) {
@@ -19,6 +22,12 @@ func getMeFeedback(t testing.TB, got, want string) {
 	if got != want {
 		t.Errorf("got %q but want %q", got, want)
 	}
+}
+
+func ExampleRepeat() {
+	result := Repeat("a", 5)
+	fmt.Println(result)
+	// Результат: aaaaa
 }
 
 /*
