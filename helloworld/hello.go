@@ -1,4 +1,4 @@
-package main
+package helloworld
 
 const spanish = "Spanish"
 const french = "French"
@@ -29,8 +29,4 @@ func greetingPrefix(language string) (prefix string) {
 	}
 
 	return prefix
-}
-
-func main() {
-
 }
