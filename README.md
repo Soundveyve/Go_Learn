@@ -10,6 +10,9 @@ go install golang.org/x/pkgsite/cmd/pkgsite@latest
 и пишем: pkgsite -open
 вся документация теперь доступна по: http://localhost:8080/testing
 
+## Доступность на основе регистра (public/private)
+В Go общедоступные функции и структуры начинаются с заглавной буквы, а приватные — со строчной. Если не хотим, чтобы внутренняя работа нашего алгоритма была доступна всем: пишем название со строчной буквы.
+
 # Naming for test:
 (https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/hello-world#writing-tests)
 
