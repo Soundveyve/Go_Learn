@@ -2,8 +2,13 @@ package massiveandslice
 
 func Sum(numbers [5]int) int {
 	var sum int = 0
-	for i := 0; i < len(numbers); i++ {
-		sum += numbers[i]
+	/*
+		range позволяет выполнять итерацию по массиву.
+		На каждой итерации range возвращает два значения — индекс и значение.
+		Мы решили игнорировать значение индекса, используя _ пустой идентификатор
+	*/
+	for _, number := range numbers {
+		sum += number
 	}
 	return sum
 }
