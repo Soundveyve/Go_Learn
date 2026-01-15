@@ -14,8 +14,11 @@ func Hello(name, language string) string {
 	return greetingPrefix(language) + name
 }
 
-func greetingPrefix(language string) string {
-	prefix := ""
+/*
+При добавление имени переменной в качестве возвращаемого значения
+Go автоматиески ициализирует под неё знаение, поэтому его явно можно не прописывать
+*/
+func greetingPrefix(language string) (prefix string) {
 	switch language {
 	case spanish:
 		prefix = spanishHelloPrefix
