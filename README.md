@@ -1,24 +1,24 @@
 # Go_Learn
-Repo for learn Golang
+Репозитонрий для изучения Golang
 
-Site for learn: https://quii.gitbook.io/learn-go-with-tests/go-fundamentals
+Сайт с которого берётся материал для изучения: https://quii.gitbook.io/learn-go-with-tests/go-fundamentals
 
-Local view doc: go doc NAME_OF_PACKAGE
-Example: go doc fmt
-ALTERNATIVE:
+Локальный просмотр документации по пакету: go doc NAME_OF_PACKAGE
+Пример: go doc fmt
+АЛЬТЕРНАТИВНО:
 go install golang.org/x/pkgsite/cmd/pkgsite@latest
-and write: pkgsite -open
-all doc on: http://localhost:8080/testing
+и пишем: pkgsite -open
+вся документация теперь доступна по: http://localhost:8080/testing
 
 # Naming for test:
 (https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/hello-world#writing-tests)
 
-Writing a test is just like writing a function, with a few rules
+Написание теста похоже на написание функции, но с некоторыми правилами
 
-- It needs to be in a file with a name like xxx_test.go
+-  Он должен находиться в файле с таким названием, как xxx_test.go
 
-- The test function must start with the word Test
+- Тестовая функция должна начинаться со слова Test
 
-- The test function takes one argument only t *testing.T
+- Функция тестирования принимает только один аргумент t *testing.T
 
-- To use the *testing.T type, you need to import "testing", like we did with fmt in the other file
+- Чтобы использовать тип *testing.T нужно выполнить в начале файла с тестами import "testing"

@@ -1,3 +1,3 @@
 # Hotkey for VSC:
 
-Ctrl+Space - extract a method hint from the documentation
+Ctrl+Space - показать сигнатуру и описание функции из документации
