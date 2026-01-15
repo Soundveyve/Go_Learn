@@ -1,6 +1,6 @@
 package massiveandslice
 
-func Sum(numbers [5]int) int {
+func Sum(numbers []int) int {
 	var sum int = 0
 	/*
 		range позволяет выполнять итерацию по массиву.
