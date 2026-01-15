@@ -10,6 +10,8 @@ go install golang.org/x/pkgsite/cmd/pkgsite@latest
 и пишем: pkgsite -open
 вся документация теперь доступна по: http://localhost:8080/testing
 
+Проверка процента покрытия кода тестами: go test -cover
+
 ## Только один package на каталог
 В исходных файлах Go может быть только один package на каталог. Объяснение на эту тему: https://dave.cheney.net/2014/12/01/five-suggestions-for-setting-up-a-go-project.
 
