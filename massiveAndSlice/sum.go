@@ -48,7 +48,11 @@ func SumAll(numbersToSum ...[]int) []int {
 func SumAllTails(numbersToSumTrails ...[]int) []int {
 	var sumsTrails []int
 	for _, numbers := range numbersToSumTrails {
-		sumsTrails = append(sumsTrails, Sum(numbers[1:]))
+		if len(numbers) == 0 {
+			sumsTrails = append(sumsTrails, 0)
+		} else {
+			sumsTrails = append(sumsTrails, Sum(numbers[1:]))
+		}
 	}
 	return sumsTrails
 }
