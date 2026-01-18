@@ -44,3 +44,11 @@ func SumAll(numbersToSum ...[]int) []int {
 	}
 	return sums
 }
+
+func SumAllTails(numbersToSumTrails ...[]int) []int {
+	var sumsTrails []int
+	for _, numbers := range numbersToSumTrails {
+		sumsTrails = append(sumsTrails, Sum(numbers[1:]))
+	}
+	return sumsTrails
+}
