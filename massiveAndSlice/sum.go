@@ -19,8 +19,7 @@ func Sum(numbers []int) int {
 Для всех входящих значений будет инициализироваться срез с переданными в функцию значениями
 */
 func SumAll(numbersToSum ...[]int) []int {
-	lengthOfNumbers := len(numbersToSum)
-	sums := make([]int, lengthOfNumbers)
+	var sums []int
 	/* полная команда + объяснение
 	make([]int, 0, 5) - создаст слайс, в котором изначально нет элементов
 	но допускается, что их будет до 5 штук. Предельное кол-во = ёмкость (cap)
@@ -40,8 +39,8 @@ func SumAll(numbersToSum ...[]int) []int {
 	cap — сколько элементов можно добавить без realloc
 	append перераспределяет память, если len > cap
 	*/
-	for index, numbers := range numbersToSum {
-		sums[index] += Sum(numbers)
+	for _, numbers := range numbersToSum {
+		sums = append(sums, Sum(numbers))
 	}
 	return sums
 }
