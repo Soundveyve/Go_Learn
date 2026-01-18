@@ -4,6 +4,10 @@ import (
 	"math"
 )
 
+type Shape interface {
+	Area() float64
+}
+
 // Доступ до структур и их полей также как и функций определяется через верхний/нижний регистр
 type Rectangle struct {
 	Width  float64
