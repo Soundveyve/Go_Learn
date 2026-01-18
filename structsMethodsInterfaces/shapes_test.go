@@ -11,24 +11,25 @@ func TestPerimeter(t *testing.T) {
 	}
 }
 
+// Первый табличный тест
 func TestArea(t *testing.T) {
 	// Shape - интерфейс, который должны реализовывать Circle() и Reactangle()
-	checkArea := func(t testing.TB, shape Shape, want float64) {
-		t.Helper()
-		got := shape.Area()
+	areaTest := []struct {
+		// Сначала в общем виде говорим, что за объекты тут лежат
+		shape Shape
+		want  float64
+	}{
+		// После этого создаём слайс с этими объектами.
+		{Rectangle{12, 6}, 72.0},
+		{Circle{10}, 314.1592653589793},
+		{Triangle{12, 6}, 36.0},
+		// запятая в конце - это НЕ ошибка
+	}
+	for _, tt := range areaTest {
+		got := tt.shape.Area()
+		want := tt.want
 		if got != want {
 			t.Errorf("got %g want %g", got, want)
 		}
 	}
-
-	t.Run("Площадь прямоугольника", func(t *testing.T) {
-		rectangle := Rectangle{12, 6}
-		checkArea(t, rectangle, 72.0)
-	})
-
-	t.Run("Площадь круга", func(t *testing.T) {
-		circle := Circle{10}
-		checkArea(t, circle, 314.1592653589793)
-	})
-
 }
