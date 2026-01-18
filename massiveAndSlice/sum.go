@@ -21,8 +21,27 @@ func Sum(numbers []int) int {
 func SumAll(numbersToSum ...[]int) []int {
 	lengthOfNumbers := len(numbersToSum)
 	sums := make([]int, lengthOfNumbers)
-	for i, numbers := range numbersToSum {
-		sums[i] += Sum(numbers)
+	/* полная команда + объяснение
+	make([]int, 0, 5) - создаст слайс, в котором изначально нет элементов
+	но допускается, что их будет до 5 штук. Предельное кол-во = ёмкость (cap)
+	Когда элементов будет больше 5, то Go
+	самостоятельно увеличит предельное количество элементов примерно в 2 раза
+	Маханизм позволяет избежать излишних аллокаций.
+	Для добавления элемента используется append:
+	append(name_of_slice, ... arguments)
+
+	Пример:
+	s := make([]int, 0, 4)
+	s = append(s, 1, 2, 3)
+	fmt.Println(len(s), cap(s)) // 3 4.  Т.е - сейчас в слайсе 3 элемента, но можно 4
+
+		Итого:
+	len — сколько элементов есть
+	cap — сколько элементов можно добавить без realloc
+	append перераспределяет память, если len > cap
+	*/
+	for index, numbers := range numbersToSum {
+		sums[index] += Sum(numbers)
 	}
 	return sums
 }
