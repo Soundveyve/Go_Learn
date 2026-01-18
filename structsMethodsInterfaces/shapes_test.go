@@ -15,21 +15,22 @@ func TestPerimeter(t *testing.T) {
 func TestArea(t *testing.T) {
 	// Shape - интерфейс, который должны реализовывать Circle() и Reactangle()
 	areaTest := []struct {
+		name string
 		// Сначала в общем виде говорим, что за объекты тут лежат
-		shape Shape
-		want  float64
+		shape   Shape
+		hasArea float64
 	}{
 		// После этого создаём слайс с этими объектами.
-		{Rectangle{12, 6}, 72.0},
-		{Circle{10}, 314.1592653589793},
-		{Triangle{12, 6}, 36.0},
+		{name: "Прямоугольник", shape: Rectangle{12, 6}, hasArea: 72.0},
+		{name: "Круг", shape: Circle{10}, hasArea: 314.1592653589793},
+		{name: "Треугольник", shape: Triangle{12, 6}, hasArea: 36.0},
 		// запятая в конце - это НЕ ошибка
 	}
 	for _, tt := range areaTest {
 		got := tt.shape.Area()
-		want := tt.want
+		want := tt.hasArea
 		if got != want {
-			t.Errorf("got %g want %g", got, want)
+			t.Errorf("%#v got %g want %g", tt.shape, got, want)
 		}
 	}
 }
