@@ -46,18 +46,21 @@ func TestSumAll(t *testing.T) {
 }
 
 func TestSumAllTails(t *testing.T) {
-	t.Run("Корректное высчитывание сумм", func(t *testing.T) {
-		got := SumAllTails([]int{0, 2}, []int{3, 9})
-		var want []int = []int{2, 9}
+
+	checkSum := func(t testing.TB, got, want []int) {
+		t.Helper()
 		if !slices.Equal(got, want) {
 			t.Errorf("got %v want %v", got, want)
 		}
+	}
+	t.Run("Корректное высчитывание сумм", func(t *testing.T) {
+		got := SumAllTails([]int{0, 2}, []int{3, 9})
+		var want []int = []int{2, 9}
+		checkSum(t, got, want)
 	})
 	t.Run("Корректное высчитывание пустого слайса", func(t *testing.T) {
 		got := SumAllTails([]int{}, []int{3, 9})
 		var want []int = []int{0, 9}
-		if !slices.Equal(got, want) {
-			t.Errorf("got %v want %v", got, want)
-		}
+		checkSum(t, got, want)
 	})
 }
